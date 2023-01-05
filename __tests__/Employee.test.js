@@ -13,7 +13,7 @@ describe("Employee", () => {
     it("returns the ID number", () => {
       const employee = new Employee("Samson", 1234, "samson.v@tesla.com");
       employee.ID();
-      expect(engineer.ID).toEqual(123)
+      expect(employee.ID).toEqual(123)
     });
 
   });
