@@ -20,7 +20,7 @@ describe("Engineer", () => {
 
   describe("Email", () => {
     it("returns the Email", () => {
-        const employee = new Employee("Samson", 1234, "samson.v@tesla.com");
+        const employee = new Engineer("Samson", 1234, "samson.v@tesla.com");
         engineer.Email();
         expect(engineer.Email).toEqual("samson.v@tesla.com")
     });
