@@ -1,3 +1,4 @@
+const Employee = require("../lib/Employee");
 const Engineer = require("../lib/Engineer");
 
 describe("Engineer", () => {
@@ -6,22 +7,18 @@ describe("Engineer", () => {
 const Engineer = require("../lib/Engineer");
 
 describe("Engineer", () => {
-  describe("reverse", () => {
-    it("should reverse a given string", () => {
-      const str = "Hello World!";
-      const reversed = "!dlroW olleH";
-
+  describe("name", () => {
+    it("returns a name", () => {
+      const employee = new Employee("Samson", )
       const result = new Algo().reverse(str);
 
       expect(result).toEqual(reversed);
     });
   });
 
-  describe("isPalindrome", () => {
-    it("should return true if a string is a palindrome", () => {
-      const str = "racecar";
-
-      const result = new Algo().isPalindrome(str);
+  describe("ID", () => {
+    it("returns the ID number", () => {
+      const employee = new employee("Samson", 1234, "samson.v@tesla.com");
 
       expect(result).toEqual(true);
     });
