@@ -1,8 +1,13 @@
+const inquirer = require("inquirer");
+const fs = require("fs");
+
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
-prompt([
+const pageTemplate = require("./src/page-template");
+
+const managerQuestions = ([
     {
         message: 'What is the mangers name?',
         name: "name",
@@ -23,43 +28,4 @@ prompt([
         message: 'What is the mangers name?',
         name: "officeNumber",
     },
-]);
-
-prompt(managerQuestions)
-.then({name, id, email, officeNumber}) => {
-    const manager = new Manager(name, id, email, officeNumber);
-    teamMembers.push(manager);
-})
-.then(() => {
-    prompt({
-        message: "would you like to add more employee",
-        type: "confirm",
-        name: "addMore",
-    })
-})
-.then(({addMore}) => {
-    if (addMore) {
-        console.log("continue");
-    } else {
-        console.log("WRITE FILE");
-    }
-})
-.then(() => {
-    return prompt({
-        type: "rawlist",
-        message: "what kind of emploee would you like to add:",
-        choices : [
-            "Engineer",
-            "Intern",
-            "Manager",
-        ],
-        name:"type"
-    })
-})
-.then(({ type }) => {
-    switch(type) {
-        case "Engineer": {
-            return prompt(engineerQuestions);
-        }
-    }
-})
+])

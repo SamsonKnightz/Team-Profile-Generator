@@ -1,29 +1,12 @@
 const Engineer = require("../lib/Engineer");
 
 describe("Engineer", () => {
-  describe("Name", () => {
-    it("returns a name", () => {
-      const engineer = new Engineer("Samson", 1234, "samson.v@tesla.com")
-        engineer.Name();
-        expect(engineer.Name).toEqual("Samson")
+    it('should have a Github', () => {
+        const engineer = new Engineer('Samson', 1234, 'samson.v@tesla.com', 'samsonknightz');
+        expect(engineer.getGithub()).toEqual('samsonknightz');
     });
-  });
-
-  describe("ID", () => {
-    it("returns the ID number", () => {
-      const engineer = new Engineer("Samson", 1234, "samson.v@tesla.com");
-      engineer.ID();
-      expect(engineer.ID).toEqual(123)
+    it('should have a role of Engineer', () => {
+        const engineer = new Engineer('Samson', 1234, 'samson.v@tesla.com', 'samsonknightz');
+        expect(engineer.getJob()).toEqual('Engineer');
     });
-
-  });
-
-  describe("Email", () => {
-    it("returns the Email", () => {
-        const engineer = new Engineer("Samson", 1234, "samson.v@tesla.com");
-        engineer.Email();
-        expect(engineer.Email).toEqual("samson.v@tesla.com")
-    });
-  });
 });
-
