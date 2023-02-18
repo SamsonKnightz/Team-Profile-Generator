@@ -24,5 +24,13 @@ describe("Employee", () => {
         employee.Email();
         expect(employee.Email).toEqual("samson.v@tesla.com")
     });
+
   });
+
+    it('should have a role', () => {
+      const employee = new Employee('Samson', 1234, 'samson.v@tesla.com');
+      employee.Role();
+      expect(employee.getRole()).toEqual('Employee');
+  })
+
 });
